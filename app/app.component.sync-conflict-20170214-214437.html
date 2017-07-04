@@ -1,0 +1,55 @@
+
+<md-sidenav-container>
+  <md-sidenav #sidenav mode="side" opened="false">
+    Hello there!!! <br />
+    I'll find something to put here... maybe
+  </md-sidenav>
+  <div class="nav-header">
+    <button class="nav-menu-button" (click)="sidenav.toggle()"><i class="material-icons md-48">menu</i></button>
+    <h1 class=nav-title>Weather</h1>
+    <div class="nav-input">
+        <input class="locationInputField" type=text [formControl]="city$" id="locationInput" placeholder="&#xf002; City/Zip">    
+    </div>   
+  </div>
+  <div class="content-body">
+    
+    <div *ngIf="!city">
+        Something something, enter a city (ex: "Frankfort, IL")
+    </div>
+    <daily-weather *ngIf="city" [city]="city"></daily-weather>
+    <!--<div class="">-->
+    
+    <!--</div>-->
+    <div>
+    </div>
+  </div>
+  <md-card>
+      <md-tab-group>
+        <md-tab label="Today">
+          <p>Today</p>
+        </md-tab>
+        <md-tab label="3 Day">
+          <p>3 Day</p>
+        </md-tab>
+        <md-tab label="7 Day">
+          <p>7 Day</p>
+        </md-tab>
+        <md-tab label="Map">
+          <p>Map</p>
+        </md-tab>
+      </md-tab-group>
+    </md-card>
+</md-sidenav-container>
+
+<md-card>
+  <div style="margin-left: auto; margin-right:auto">
+  <md-tab-group>
+    <md-tab label="Earth">
+      <p>EARTH</p>
+    </md-tab>
+    <md-tab label="Fire">
+      <p>FIRE</p>
+    </md-tab>
+  </md-tab-group>
+  </div>
+</md-card>

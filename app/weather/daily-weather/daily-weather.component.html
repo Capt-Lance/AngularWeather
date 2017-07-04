@@ -1,0 +1,15 @@
+<!--<div class="weather-component">-->
+<md-card>
+    <!--<div>-->
+
+    <h1 class="weather-component-header">Current Weather</h1>
+    <!--<div *ngIf="dailyWeather" class="weather-component-body" style="background-image: url(weather/shared/images/mist-haze-fog.jpg)">-->
+    <div *ngIf="dailyWeather" class="weather-component-body">
+        <p>{{dailyWeather.name}}, {{dailyWeather.sys.country}}</p>
+        <img src="{{iconUrl}}" width="75px">
+        <p>{{dailyWeather.main.temp}}&deg;F
+        <p>{{dailyWeather.weather[0].description}}
+    </div>
+</md-card>
+    <!--</div>-->
+<!--</div>-->
