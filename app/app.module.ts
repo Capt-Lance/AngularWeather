@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpModule} from '@angular/http';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MaterialModule} from '@angular/material';
@@ -9,10 +10,11 @@ import {DailyWeatherComponent} from './weather/daily-weather/daily-weather.compo
 import {DailyWeatherService} from './weather/daily-weather/daily-weather.service';
 @NgModule({
     imports: [
-        BrowserModule,
+        BrowserModule,,
+        BrowserAnimationsModule,
         HttpModule,
         ReactiveFormsModule,
-        //MaterialModule
+        MaterialModule
         ],
     declarations: [
         AppComponent,

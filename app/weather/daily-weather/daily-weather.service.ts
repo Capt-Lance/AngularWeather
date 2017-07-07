@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
-import {Http} from '@angular/http';
+import {Http, Response} from '@angular/http';
 
+import { Observable } from 'rxjs/Observable'; 
 import 'rxjs/add/operator/toPromise';
 
 import {DailyWeather} from '../shared/models/daily-weather.model';
@@ -13,13 +14,14 @@ export class DailyWeatherService {
     //private BASEURL = '../../../weather.json'
     constructor(private http: Http){}
 
-    public getDailyWeatherByCity(city: string, country: string): Promise<DailyWeather> {
+    public getDailyWeatherByCity(city: string, country: string): Observable<DailyWeather> {//Promise<DailyWeather> {
         let url = `${this.BASEURL}/weather?q=${city},${country}&${this.URLOPTIONS}&appid=${this.APIKEY}`;
         //let url = `${this.BASEURL}`;
         return this.http.get(url)
-            .toPromise()
-            .then(response => response.json() as DailyWeather)
-            .catch(reason => this.error(reason));
+            .map(response => response.json() as DailyWeather)
+            // .toPromise()
+            // .then(response => response.json() as DailyWeather)
+            // .catch(reason => this.error(reason));
     }
 
     private error(reason: any){

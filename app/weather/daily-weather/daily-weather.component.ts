@@ -40,13 +40,18 @@ export class DailyWeatherComponent implements OnInit, OnChanges {
 
     private getDailyWeather(){
         this.dailyWeatherService.getDailyWeatherByCity(this.city, this.country)
-                .then(weather => {
-                    this.dailyWeather = weather;
-                    this.iconUrl= `${this.iconBaseUrl}/${this.dailyWeather.weather[0].icon}.png`
-                    console.log(`Icon is ${this.dailyWeather.weather[0].icon}`);
-                    console.log(this.dailyWeather.weather);
-                    console.log(this.iconUrl);
-                    console.log(this.dailyWeather);
-                });
+            .subscribe(weather => {
+                this.dailyWeather = weather;
+                this.iconUrl= `${this.iconBaseUrl}/${this.dailyWeather.weather[0].icon}.ping`
+
+            });
+                // .then(weather => {
+                //     this.dailyWeather = weather;
+                //     this.iconUrl= `${this.iconBaseUrl}/${this.dailyWeather.weather[0].icon}.png`
+                //     console.log(`Icon is ${this.dailyWeather.weather[0].icon}`);
+                //     console.log(this.dailyWeather.weather);
+                //     console.log(this.iconUrl);
+                //     console.log(this.dailyWeather);
+                // });
     }
 }

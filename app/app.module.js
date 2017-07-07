@@ -8,8 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var animations_1 = require("@angular/platform-browser/animations");
 var http_1 = require("@angular/http");
 var forms_1 = require("@angular/forms");
+var material_1 = require("@angular/material");
 var app_component_1 = require("./app.component");
 var daily_weather_component_1 = require("./weather/daily-weather/daily-weather.component");
 var daily_weather_service_1 = require("./weather/daily-weather/daily-weather.service");
@@ -19,9 +21,11 @@ var AppModule = (function () {
     AppModule = __decorate([
         core_1.NgModule({
             imports: [
-                platform_browser_1.BrowserModule,
+                platform_browser_1.BrowserModule, ,
+                animations_1.BrowserAnimationsModule,
                 http_1.HttpModule,
                 forms_1.ReactiveFormsModule,
+                material_1.MaterialModule
             ],
             declarations: [
                 app_component_1.AppComponent,
